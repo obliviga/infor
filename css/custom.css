@@ -1,0 +1,14 @@
+
+.navbar {
+	border-radius: 0;
+}
+.navbar-default {
+	background-color: #023379;
+	border: none;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #EDF2F6;
+}
+.navbar-default .navbar-nav > li > a:hover {
+    color: white;
+}
