@@ -8,16 +8,31 @@
 .navbar-default .navbar-nav > li > a {
     color: #EDF2F6;
 }
+.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
+    background-color: transparent;
+    color: #EDF2F6;
+}
 .navbar i {
 	font-size: 18px;
 	color: #EDF2F6;
 }
-.navbar-default .navbar-nav > li > a:hover, .navbar i:hover {
-    color: white;
-}
-
 .badge {
-	background-color: #FF4E36;
-	padding: 4px;
-	border-radius: 2em;
+    background-color: #ff4e36;
+    border-radius: 2em;
+    font-family: Arial;
+    font-size: 10px;
+    padding: 4px;
+/*    position: absolute;
+    right: 72px;
+    top: 6px;*/
+}
+.badge-border {
+	border: 2px solid white;
+	padding: 2px;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover {
+    background-color: #EDF2F6;
+}
+.dropdown-clicked i {
+	color: #333;
 }
