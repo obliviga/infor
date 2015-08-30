@@ -76,7 +76,7 @@
       } else {
         $(".badge").removeClass("badge-border");
       }
-      // Getting the number of list items in the dropdown menu, and appending the amount to the text inside badge.
+
       var badgeCount = $("#dropdown-menu li").length;
       $(".badge").text(badgeCount);
 
@@ -88,7 +88,7 @@
     
 
     $("#addToCart").click(function(){
-        $("#dropdown-menu").append("<li>Sample Item</li>");
+        $("#dropdown-menu").append("<li><a href='#'>Action</a></li>");
     });
   });
 
