@@ -45,9 +45,6 @@
             <ul class="dropdown-menu" id="dropdown-menu">
               <li><a href="#">Action</a></li>
               <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-                            <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
             </ul>
           </li>
         </ul>
@@ -68,16 +65,11 @@
   <script type="text/javascript">
 
   $(document).ready(function() {
-
     // Defining the interval for listening to changes
     var interval = setInterval(listenForChanges, 1);
     
     function listenForChanges() {
       // Every 1 millisecond:
-    var interval = setInterval(changeBadge, 1);
-
-    function changeBadge() {
-
       if ( $('#dropdown').hasClass('open') ) {
         // clearInterval(interval);
         $(".badge").addClass("badge-border");
