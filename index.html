@@ -50,12 +50,36 @@
                   <div class="col-sm-3">
                     <img src="http://i.imgur.com/J4r00Zb.png">
                   </div>
-                  <div class="col-sm-8"><strong class="truncate">EOS Rebel T6i EF-S 18-55mm f/3.5-5.6 IS STM Kit This is some sample truncated text</strong></div>
+                  <div class="col-sm-8 module">
+                    <p class="clamped clamped-2">
+                      <span class="text">
+                          <span class="ellipsis">
+                              &#133;
+                          </span>
+                          <span class="fill"></span>
+                      </span>
+                    </p>
+                    <p class="clamped clamped-2">
+                      <span class="text">
+                        <a href="#">EOS Rebel T6i EF-S 18-55mm f/3.5-5.6 IS STM Kit This is some sample placeholder truncated text</a>
+                        <span class="ellipsis">
+                            &#133;
+                        </span>
+                        <span class="fill"></span>
+                      </span>
+                    </p>
+                  </div>
                   <div class="col-sm-1">
                     <span class="fa-stack">
                       <i class="fa fa-circle fa-stack-2x"></i>
                       <i class="fa fa-times fa-stack-1x inverse"></i>
                     </span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-3"></div>
+                  <div class="col-sm-9">
+                    <div class="model-number">0591C003</div>
                   </div>
                 </div>
               </li>
@@ -78,7 +102,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
   <script src="js/perfect-scrollbar.jquery.min.js"></script>
   <script src="js/perfect-scrollbar.min.js"></script>
-  <script src="https://raw.githubusercontent.com/micjamking/succinct/master/jQuery.succinct.min.js"></script>
+  <script src="js/clamp.min.js"></script>
   <script type="text/javascript">
 
   $(document).ready(function() {
@@ -97,7 +121,29 @@
       var badgeCount = $("#dropdown-menu li.cart-item").length;
       $(".badge").text(badgeCount);
 
+      if ( badgeCount < 10 ) {
+        $(".badge").addClass("badge-less-than-10");
+      } else {
+        $(".badge").removeClass("badge-less-than-10");
+      }
     };
+
+    // $( window ).resize(function() {
+    //   // If viewport size is greater than 766px, initialize succinct plug-in to truncate text and add corresponding class. If viewport size is less than 766px, remove the truncate class.
+    //   if ( $(window).width() > 766) {
+    //     $('.truncate').succinct({
+    //       size: 81
+    //     });
+    //     $('#product-name').addClass("truncate");
+    //   } else {
+    //     $('.truncate').succinct({
+    //       size: 8100
+    //     });
+    //     $('#product-name').removeClass("truncate");
+    //   }
+
+
+    // });
 
     $('#dropdown-menu').perfectScrollbar();
 
@@ -105,9 +151,6 @@
         $("#dropdown-menu").append("<li class='cart-item'>Sample Item</li><li role='separator' class='divider'></li>");
     });
 
-    $('.truncate').succinct({
-      size: 81
-    });
 
   });
 
