@@ -39,9 +39,9 @@
           <li><a href="#">Language (EN)</a></li>
           <li><a href="#">Currency ($)</a></li>
           <li><a href="#"><i class="fa fa-user"></i> My Account</a></li>
-          <li class="dropdown">
+          <li class="dropdown" id="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-shopping-cart"><span class="badge">36</span></i> My Cart</a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu" id="dropdown-menu">
               <li><a href="#">Action</a></li>
               <li><a href="#">Another action</a></li>
               <li><a href="#">Something else here</a></li>
@@ -64,14 +64,38 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 
   <script type="text/javascript">
-  $(document).ready(function() {
 
-    $(".dropdown").click(function() {
-      $(this).toggleClass("dropdown-clicked");
-      $(".badge").toggleClass("badge-border");
-    });
+  $(document).ready(function() {
+    // if( $( "#dropdown" ).hasClass( "open" ) ) {
+    //   console.log('test');
+    // }
+
+    // if ( $('.dropdown-menu').css('display') == 'block' ) {
+    //   console.log('dropdown displayed')
+    // }
+    var interval = setInterval(changeBadge, 1);
+
+    function changeBadge() {
+      if ( $('#dropdown').hasClass('open') ) {
+        console.log('add class border');
+        // clearInterval(interval);
+        $(".badge").addClass("badge-border");
+      } else {
+        console.log('remove class border');
+        $(".badge").removeClass("badge-border");
+      }
+    };
+
+    // $(event.target).hasClass('open');
+
+    // $('#dropdown'+i).on('click', function(event){
+    //   if( $(event.target).hasClass('open')) {
+    //     console.log('test');
+    //   }
+    // });
 
   });
+
   </script>
 </body>
 
