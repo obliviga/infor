@@ -12,7 +12,7 @@
     background-color: transparent;
     color: #EDF2F6;
 }
-.navbar i {
+.navbar i.fa-cart {
 	font-size: 18px;
 	color: #EDF2F6;
 }
@@ -41,4 +41,13 @@
 .navbar-nav > li > .dropdown-menu {
 	width: 35em;
 	height: 30em;
+}
+.fa-circle {
+	color: #CCC;
+}
+.fa-times {
+	color: #FFF;
+}
+.dropdown-menu {
+	padding: 25px;
 }

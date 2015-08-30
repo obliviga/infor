@@ -42,9 +42,25 @@
           <li><a href="#"><i class="fa fa-user"></i> My Account</a></li>
           <li class="dropdown" id="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-shopping-cart"><span class="badge">36</span></i> My Cart</a>
+
             <ul class="dropdown-menu" id="dropdown-menu">
-              <li class="cart-item"><a href="#">Action</a></li>
+
+              <li class="cart-item">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <img src="http://i.imgur.com/J4r00Zb.png">
+                  </div>
+                  <div class="col-sm-8"><strong class="truncate">EOS Rebel T6i EF-S 18-55mm f/3.5-5.6 IS STM Kit This is some sample truncated text</strong></div>
+                  <div class="col-sm-1">
+                    <span class="fa-stack">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-times fa-stack-1x inverse"></i>
+                    </span>
+                  </div>
+                </div>
+              </li>
               <li role="separator" class="divider"></li>
+
             </ul>
           </li>
         </ul>
@@ -62,6 +78,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
   <script src="js/perfect-scrollbar.jquery.min.js"></script>
   <script src="js/perfect-scrollbar.min.js"></script>
+  <script src="https://raw.githubusercontent.com/micjamking/succinct/master/jQuery.succinct.min.js"></script>
   <script type="text/javascript">
 
   $(document).ready(function() {
@@ -87,6 +104,11 @@
     $("#addToCart").click(function(){
         $("#dropdown-menu").append("<li class='cart-item'>Sample Item</li><li role='separator' class='divider'></li>");
     });
+
+    $('.truncate').succinct({
+      size: 81
+    });
+
   });
 
   </script>
