@@ -22,17 +22,18 @@
     font-family: Arial;
     font-size: 10px;
     padding: 4px;
-/*    position: absolute;
-    right: 72px;
-    top: 6px;*/
+    transform: translateX(-43%) translateY(-42%);
 }
 .badge-border {
 	border: 2px solid white;
 	padding: 2px;
 }
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover {
-    background-color: #EDF2F6;
+    background-color: #FFF;
 }
+/*.dropdown-clicked {
+	background-color: #FFF;
+}*/
 .dropdown-clicked i {
 	color: #333;
 }
