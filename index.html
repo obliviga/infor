@@ -16,6 +16,7 @@
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
   <link rel="stylesheet" href="css/custom.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/perfect-scrollbar.min.css">
   <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
@@ -47,6 +48,31 @@
               <li><a href="#">Something else here</a></li>
               <li role="separator" class="divider"></li>
               <li><a href="#">Separated link</a></li>
+                            <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+                            <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+                            <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+                            <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+                            <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
             </ul>
           </li>
         </ul>
@@ -62,37 +88,24 @@
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
-
+  <script src="js/perfect-scrollbar.jquery.min.js"></script>
+  <script src="js/perfect-scrollbar.min.js"></script>
   <script type="text/javascript">
 
   $(document).ready(function() {
-    // if( $( "#dropdown" ).hasClass( "open" ) ) {
-    //   console.log('test');
-    // }
 
-    // if ( $('.dropdown-menu').css('display') == 'block' ) {
-    //   console.log('dropdown displayed')
-    // }
     var interval = setInterval(changeBadge, 1);
 
     function changeBadge() {
       if ( $('#dropdown').hasClass('open') ) {
-        console.log('add class border');
         // clearInterval(interval);
         $(".badge").addClass("badge-border");
       } else {
-        console.log('remove class border');
         $(".badge").removeClass("badge-border");
       }
     };
 
-    // $(event.target).hasClass('open');
-
-    // $('#dropdown'+i).on('click', function(event){
-    //   if( $(event.target).hasClass('open')) {
-    //     console.log('test');
-    //   }
-    // });
+    $('#dropdown-menu').perfectScrollbar();
 
   });
 

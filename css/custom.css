@@ -38,7 +38,7 @@
 .open a i {
 	color: #333;
 }
-/*.open a i .badge-border {
-	color: green;
-	background-color: yellow;
-}*/
+.navbar-nav > li > .dropdown-menu {
+	width: 35em;
+	height: 30em;
+}
