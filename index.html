@@ -43,7 +43,7 @@
           <li class="dropdown" id="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-shopping-cart"><span class="badge">36</span></i> My Cart</a>
             <ul class="dropdown-menu" id="dropdown-menu">
-              <li><a href="#">Action</a></li>
+              <li class="cart-item"><a href="#">Action</a></li>
               <li role="separator" class="divider"></li>
             </ul>
           </li>
@@ -77,7 +77,7 @@
         $(".badge").removeClass("badge-border");
       }
       // Getting the number of list items in the dropdown menu, and appending the amount to the text inside badge.
-      var badgeCount = $("#dropdown-menu li").length;
+      var badgeCount = $("#dropdown-menu li.cart-item").length;
       $(".badge").text(badgeCount);
 
     };
@@ -85,7 +85,7 @@
     $('#dropdown-menu').perfectScrollbar();
 
     $("#addToCart").click(function(){
-        $("#dropdown-menu").append("<li>Sample Item</li>");
+        $("#dropdown-menu").append("<li class='cart-item'>Sample Item</li><li role='separator' class='divider'></li>");
     });
   });
 
