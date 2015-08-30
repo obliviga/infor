@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="css/main.css">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
   <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" type="text/css" href="css/media-queries.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/perfect-scrollbar.min.css">
   <script src="js/vendor/modernizr-2.8.3.min.js"></script>
@@ -41,7 +42,7 @@
           <li><a href="#">Currency ($)</a></li>
           <li><a href="#"><i class="fa fa-user"></i> My Account</a></li>
           <li class="dropdown" id="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-shopping-cart"><span class="badge">36</span></i> My Cart</a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-shopping-cart"><span class="badge"></span></i> My Cart</a>
 
             <ul class="dropdown-menu" id="dropdown-menu">
 
@@ -50,36 +51,21 @@
                   <div class="col-sm-3">
                     <img src="http://i.imgur.com/J4r00Zb.png">
                   </div>
-                  <div class="col-sm-8 module">
-                    <p class="clamped clamped-2">
-                      <span class="text">
-                          <span class="ellipsis">
-                              &#133;
+                  <div class="col-sm-9 module">
+                    <div class="row">
+                      <div class="col-sm-11 pull-left">
+                          <span class="text">
+                            <strong>EOS Rebel T6i EF-S 18-55mm f/3.5-5.6 IS STM Kit</strong>
+                            <div class="model-number">0591C003</div>
                           </span>
-                          <span class="fill"></span>
+                      </div>
+                      <div class="col-sm-1 pull-right">
+                      <span class="fa-stack times-circle">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-times fa-stack-1x inverse"></i>
                       </span>
-                    </p>
-                    <p class="clamped clamped-2">
-                      <span class="text">
-                        <a href="#">EOS Rebel T6i EF-S 18-55mm f/3.5-5.6 IS STM Kit This is some sample placeholder truncated text</a>
-                        <span class="ellipsis">
-                            &#133;
-                        </span>
-                        <span class="fill"></span>
-                      </span>
-                    </p>
-                  </div>
-                  <div class="col-sm-1">
-                    <span class="fa-stack">
-                      <i class="fa fa-circle fa-stack-2x"></i>
-                      <i class="fa fa-times fa-stack-1x inverse"></i>
-                    </span>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-3"></div>
-                  <div class="col-sm-9">
-                    <div class="model-number">0591C003</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </li>
@@ -88,8 +74,10 @@
             </ul>
           </li>
         </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
   </nav>
   <button id="addToCart">Add Item</button>
 
@@ -104,56 +92,37 @@
   <script src="js/perfect-scrollbar.min.js"></script>
   <script src="js/clamp.min.js"></script>
   <script type="text/javascript">
+    $(document).ready(function() {
+      // Defining the interval for listening to changes
+      var interval = setInterval(listenForChanges, 1);
 
-  $(document).ready(function() {
-    // Defining the interval for listening to changes
-    var interval = setInterval(listenForChanges, 1);
-    
-    function listenForChanges() {
-      // Every 1 millisecond:
-      if ( $('#dropdown').hasClass('open') ) {
-        // clearInterval(interval);
-        $(".badge").addClass("badge-border");
-      } else {
-        $(".badge").removeClass("badge-border");
-      }
-      // Getting the number of list items in the dropdown menu, and appending the amount to the text inside badge.
-      var badgeCount = $("#dropdown-menu li.cart-item").length;
-      $(".badge").text(badgeCount);
+      function listenForChanges() {
+        // Every 1 millisecond:
+        if ($('#dropdown').hasClass('open')) {
+          // clearInterval(interval);
+          $(".badge").addClass("badge-border");
+        } else {
+          $(".badge").removeClass("badge-border");
+        }
+        // Getting the number of list items in the dropdown menu, and appending the amount to the text inside badge.
+        var badgeCount = $("#dropdown-menu li.cart-item").length;
+        $(".badge").text(badgeCount);
 
-      if ( badgeCount < 10 ) {
-        $(".badge").addClass("badge-less-than-10");
-      } else {
-        $(".badge").removeClass("badge-less-than-10");
-      }
-    };
+        if (badgeCount < 10) {
+          $(".badge").addClass("badge-less-than-10");
+        } else {
+          $(".badge").removeClass("badge-less-than-10");
+        }
+      };
 
-    // $( window ).resize(function() {
-    //   // If viewport size is greater than 766px, initialize succinct plug-in to truncate text and add corresponding class. If viewport size is less than 766px, remove the truncate class.
-    //   if ( $(window).width() > 766) {
-    //     $('.truncate').succinct({
-    //       size: 81
-    //     });
-    //     $('#product-name').addClass("truncate");
-    //   } else {
-    //     $('.truncate').succinct({
-    //       size: 8100
-    //     });
-    //     $('#product-name').removeClass("truncate");
-    //   }
+      $('#dropdown-menu').perfectScrollbar();
 
-
-    // });
-
-    $('#dropdown-menu').perfectScrollbar();
-
-    $("#addToCart").click(function(){
+      $("#addToCart").click(function() {
         $("#dropdown-menu").append("<li class='cart-item'>Sample Item</li><li role='separator' class='divider'></li>");
+      });
+
+
     });
-
-
-  });
-
   </script>
 </body>
 

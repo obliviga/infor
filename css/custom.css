@@ -56,33 +56,12 @@
 }
 .model-number {
   font-weight: 300;
-  -webkit-transform: translateY(-90%);
+/*  -webkit-transform: translateY(-90%);
 	-moz-transform: translateY(-90%);
 	-ms-transform: translateY(-90%);
 	-o-transform: translateY(-90%);
-  transform: translateY(-90%);
+  transform: translateY(-90%);*/
 }
 .navbar-nav .open .dropdown-menu {
 	background-color: #FFF;
-}
-.clamped {
-  line-height: 1.5;
-  overflow: hidden;
-  position: relative;
-}
-.clamped-2 {
-  /* Clamp to 2 lines, ie line-height x 2: */
-  max-height: 3em;
-}
-.ellipsis {
-  background: #fff;
-  bottom: 0;
-  position: absolute;
-  right: 0;
-}
-.fill {
-  background: #fff; 
-  height: 100%;
-  position: absolute;
-  width: 100%;
 }
