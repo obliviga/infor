@@ -85,7 +85,7 @@ em, .multiple-styles {
   border-color: -moz-use-text-color rgba(0, 0, 0, 0.08) rgba(0, 0, 0, 0.08);
   border-style: none solid solid;
   border-width: medium 1px 1px;
-  height: 10em;
+  height: 12em;
   margin-left: -26px;
   padding: 25px;
   position: absolute;
@@ -94,8 +94,27 @@ em, .multiple-styles {
 .subtotal {
 	font-size: 21px;
 }
-
-
+.button-row {
+	padding-top: 3px;
+}
+.cart-button, .checkout-button {
+	cursor: pointer;
+  display: table;
+  margin: 0 auto;
+  padding: 8px 64px;
+  color: #E5E5E5;
+  font-size: 12px;
+}
+.cart-button:hover, .checkout-button:hover {
+	color: white;
+	text-decoration: none;
+}
+.cart-button {
+	background-color: #5E5E5E;
+}
+.checkout-button {
+	background-color: #0A96EB;
+}
 
 
 
