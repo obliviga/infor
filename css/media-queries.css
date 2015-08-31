@@ -1,3 +1,4 @@
+/*For viewports greater than 768*/
 @media screen and (min-width: 768px) {
 	.times-circle {
     bottom: 64px;
@@ -8,7 +9,7 @@
     right: 25px;
 	}
 }
-
+/*For viewports less than 768*/
 @media screen and (max-width: 768px) {
 	.cart-button {
 		margin-right: 68%;
