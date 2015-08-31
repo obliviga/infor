@@ -36,16 +36,14 @@ $(document).ready(function() {
   // add the price to the element with the class of .total
   $(".total1").append(price1);
 
-  // When input with class of quantity is clicked,
-  $("input.quantity1").click(function() {
-
+  // Bind any changes of the input value.
+  $("input.quantity1").bind("change click", function() {
     // Concatenate the string '$'' with the multiplication of the vars quantity1 and price1, and append it to the element with the class of .total. The toFixed method formats the number using fixed-point notation, in our case, two decimal places. Using jQuery helper plugin to add commas to numbers every three digits (plugins.js)
-
     $(".total1").text("$" + (quantity1 * price1).toFixed(2)).digits();
 
-
+    quantity1 = parseInt($(this).val());
+    $("#grand-quantity").text(quantity1 + quantity2);
   });
-
   /* Second cart item */
 
   var leatherQuantity = parseInt($("#leather-quantity").text());
@@ -54,20 +52,23 @@ $(document).ready(function() {
 
   var quantity2 = leatherQuantity + canvasQuantity + suedeQuantity;
 
-  var grandQuantity = quantity1 + quantity2;
-
   $("#total-quantity-item2").text(quantity2);
 
+  var leatherCost = $("#leather-cost").text();
+  var convertedLeatherCost = Number(leatherCost.replace(/[^0-9\.]+/g, ""));
+
+  var canvasCost = $("#canvas-cost").text();
+  var convertedCanvasCost = Number(canvasCost.replace(/[^0-9\.]+/g, ""));
+
+  var suedeCost = $("#suede-cost").text();
+  var convertedSuedeCost = Number(suedeCost.replace(/[^0-9\.]+/g, ""));
+
+  $(".total2").text("$" + (convertedLeatherCost + convertedCanvasCost + convertedSuedeCost)).digits();
+
+  /* Badge Counter */
+  var grandQuantity = quantity1 + quantity2;
+
   $("#grand-quantity").text(grandQuantity);
-
-  // Bind any changes of the input value.
-  $("input.quantity1").bind("change", function() {
-    quantity1 = parseInt($(this).val());
-    $("#grand-quantity").text(quantity1 + quantity2);
-  });
-
-
-
 
 
 });
