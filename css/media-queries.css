@@ -8,3 +8,14 @@
     right: 25px;
 	}
 }
+
+@media screen and (max-width: 768px) {
+	.cart-button {
+		margin-right: 68%;
+	  margin-top: -4%;
+	}
+	.checkout-button {
+		margin-right: 30%;
+	  margin-top: -33px;
+	}
+}
