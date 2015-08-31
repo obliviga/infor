@@ -16,6 +16,13 @@ $(document).ready(function() {
   //   $(".badge").text(grandQuantity);
   // };
 
+  // $(window).resize(function() {
+  //   var viewportWidth = $(window).width();
+  //   if (viewportWidth < 766) {
+      
+  //   }
+  // });
+
   // Disables horizontal scrolling in cart
   $('#dropdown-menu').perfectScrollbar({
     suppressScrollX: true
