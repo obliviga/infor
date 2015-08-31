@@ -67,7 +67,21 @@
                       </div>
                     </div>
                     <div class="row">
-                    <div class="col-sm-12">$849.99</div>
+                      <div class="col-sm-12">
+                        $<span class="price">849.99</span>
+                        <br>
+                        <div class="you-save">
+                          <em><s>$899.99</s> you save $50.00</em>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <input class="quantity" type="number" min="1">
+                      </div>
+                      <div class="col-sm-6">
+                        <p class="total">$</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -97,17 +111,11 @@
   <script type="text/javascript">
 
     $(document).ready(function() {
-      // Defining the interval for listening to changes
+      // Defining the interval for listening to changes (every 1 millisecond)
       var interval = setInterval(listenForChanges, 1);
 
       function listenForChanges() {
-        // Every 1 millisecond:
-        // if ($('#dropdown').hasClass('open')) {
-        //   // clearInterval(interval);
-        //   $(".badge").addClass("badge-border");
-        // } else {
-        //   $(".badge").removeClass("badge-border");
-        // }
+        
         // Getting the number of list items in the dropdown menu, and appending the amount to the text inside badge.
         var badgeCount = $("#dropdown-menu li.cart-item").length;
         $(".badge").text(badgeCount);
@@ -119,14 +127,25 @@
         }
       };
 
+      // Disables horizontal scrolling in cart
       $('#dropdown-menu').perfectScrollbar({
         suppressScrollX: true
       });
-
+      // Add product to the cart
       $("#addToCart").click(function() {
         $("#dropdown-menu").append("<li class='cart-item'>Sample Item</li><li role='separator' class='divider'></li>");
       });
-
+      // price var is equal to the text of whatever is in the .place class
+      var price = $(".price").text() * 1;
+      // add the price to the element with the class of .total
+      $(".total").append(price);
+      // When input with class of quantity is clicked,
+      $("input.quantity").click(function(){
+        // make quantity var equal to the input field's current value
+        var quantity = $(this).val();
+        // Then concatenate the string '$'' with the multiplication of the vars quantity and price, and append it to the element with the class of .total. The toFixed method formats the number using fixed-point notation, in our case, two decimal places.
+        $(".total").text("$" + (quantity*price).toFixed(2));
+      });
 
     });
   </script>
