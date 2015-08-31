@@ -91,7 +91,9 @@ em, .multiple-styles {
   position: absolute;
   top: 467px;
 }
-
+.subtotal {
+	font-size: 21px;
+}
 
 
 

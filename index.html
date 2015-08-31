@@ -42,7 +42,7 @@
           <li><a href="#">Currency ($)</a></li>
           <li><a href="#"><i class="fa fa-user"></i> My Account</a></li>
           <li class="dropdown" id="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-shopping-cart"><span id="grand-quantity" class="badge"></span></i> My Cart</a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-shopping-cart"><span class="badge grand-quantity"></span></i> My Cart</a>
 
             <ul class="dropdown-menu" id="dropdown-menu">
               <li class="cart-item1">
@@ -157,8 +157,12 @@
                 <div class="row">
                   <div class="">
                     <div class="row">
-                      <div class="col-sm-6">test</div>
-                      <div class="col-sm-6">test</div>
+                      <div class="col-sm-6 multiple-styles">You have <span class="grand-quantity"></span> items in your cart.</div>
+                    </div>
+                    <br>
+                    <div class="row subtotal">
+                      <div class="col-sm-6">Subtotal (USD)</div>
+                      <div class="col-sm-6"><span class="pull-right" id="subtotal"></span></div>
                     </div>
                   </div>
                 </div>
@@ -171,8 +175,6 @@
     </div>
     <!-- /.container-fluid -->
   </nav>
-
-  <button id="addToCart">Add Item</button>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script>

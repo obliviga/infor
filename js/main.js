@@ -1,55 +1,28 @@
 $(document).ready(function() {
-  // Defining the interval for listening to changes (every 1 millisecond)
-  // var interval = setInterval(listenForChanges, 1);
-
-  // function listenForChanges() {
-
-  //   // Getting the number of list items in the dropdown menu, and appending the amount to the text inside badge.
-  //   var badgeCount = $("#dropdown-menu li.cart-item").length;
-  //   $(".badge").text(badgeCount);
-
-  //   if (badgeCount < 10) {
-  //     $(".badge").addClass("badge-less-than-10");
-  //   } else {
-  //     $(".badge").removeClass("badge-less-than-10");
-  //   }
-  //   $(".badge").text(grandQuantity);
-  // };
-
-  // $(window).resize(function() {
-  //   var viewportWidth = $(window).width();
-  //   if (viewportWidth < 766) {
-      
-  //   }
-  // });
 
   // Disables horizontal scrolling in cart
   $('#dropdown-menu').perfectScrollbar({
     suppressScrollX: true
   });
-  // Add product to the cart
-  $("#addToCart").click(function() {
-    $("#dropdown-menu").append("<li class='cart-item'>Sample Item</li><li role='separator' class='divider'></li>");
-  });
 
   /* First cart item */
 
-  // price1 var is equal to the text of whatever is in the .place class
-  var price1 = $(".price1").text() * 1;
+  // price1 var is equal to the text of whatever is in the .price1 class
+  var price1 = $(".price1").text();
 
-  // quantity1 var is equal to the text of whatever is in the .place class
+  // quantity1 var is equal to the text of whatever is in the .price1 class
   var quantity1 = parseInt($("input.quantity1").val());
 
   // add the price to the element with the class of .total
   $(".total1").append(price1);
 
   // Bind any changes of the input value.
-  $("input.quantity1").bind("change click", function() {
+  $("input.quantity1").bind("click", function() {
     // Concatenate the string '$'' with the multiplication of the vars quantity1 and price1, and append it to the element with the class of .total. The toFixed method formats the number using fixed-point notation, in our case, two decimal places. Using jQuery helper plugin to add commas to numbers every three digits (plugins.js)
     $(".total1").text("$" + (quantity1 * price1).toFixed(2)).digits();
 
     quantity1 = parseInt($(this).val());
-    $("#grand-quantity").text(quantity1 + quantity2);
+    $(".grand-quantity").text(quantity1 + quantity2);
   });
   /* Second cart item */
 
@@ -70,12 +43,29 @@ $(document).ready(function() {
   var suedeCost = $("#suede-cost").text();
   var convertedSuedeCost = Number(suedeCost.replace(/[^0-9\.]+/g, ""));
 
-  $(".total2").text("$" + (convertedLeatherCost + convertedCanvasCost + convertedSuedeCost)).digits();
+  var total2 = convertedLeatherCost + convertedCanvasCost + convertedSuedeCost;
+  console.log(total2);
+  $(".total2").text("$"+total2).digits();
 
   /* Badge Counter */
   var grandQuantity = quantity1 + quantity2;
 
-  $("#grand-quantity").text(grandQuantity);
+  $(".grand-quantity").text(grandQuantity);
 
+  /* Sub Total */
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
