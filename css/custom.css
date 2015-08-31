@@ -12,26 +12,26 @@
     background-color: transparent;
     color: #EDF2F6;
 }
-.navbar i.fa-cart {
+.navbar i.fa-shopping-cart {
 	font-size: 18px;
-	color: #EDF2F6;
 }
 .badge {
     background-color: #ff4e36;
     border-radius: 2em;
     font-family: Arial;
     font-size: 10px;
-    padding: 4px;
+    padding: 2px;
     -webkit-transform: translateX(-43%) translateY(-42%);
 		-moz-transform: translateX(-43%) translateY(-42%);
 		-ms-transform: translateX(-43%) translateY(-42%);
 		-o-transform: translateX(-43%) translateY(-42%);
     transform: translateX(-43%) translateY(-42%);
+    border: 2px solid white;
 }
-.badge-border {
+/*.badge-border {
 	border: 2px solid white;
 	padding: 2px;
-}
+}*/
 .badge-less-than-10 {
 	padding: 2px 4px;
 }
@@ -43,7 +43,7 @@
 }
 .navbar-nav > li > .dropdown-menu {
 	width: 35em;
-	height: 30em;
+	max-height: 30em;
 }
 .fa-circle {
 	color: #CCC;

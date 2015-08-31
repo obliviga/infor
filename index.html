@@ -66,8 +66,12 @@
                       </span>
                       </div>
                     </div>
+                    <div class="row">
+                    <div class="col-sm-12">$849.99</div>
+                    </div>
                   </div>
                 </div>
+                
               </li>
               <li role="separator" class="divider"></li>
 
@@ -90,20 +94,20 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
   <script src="js/perfect-scrollbar.jquery.min.js"></script>
   <script src="js/perfect-scrollbar.min.js"></script>
-  <script src="js/clamp.min.js"></script>
   <script type="text/javascript">
+
     $(document).ready(function() {
       // Defining the interval for listening to changes
       var interval = setInterval(listenForChanges, 1);
 
       function listenForChanges() {
         // Every 1 millisecond:
-        if ($('#dropdown').hasClass('open')) {
-          // clearInterval(interval);
-          $(".badge").addClass("badge-border");
-        } else {
-          $(".badge").removeClass("badge-border");
-        }
+        // if ($('#dropdown').hasClass('open')) {
+        //   // clearInterval(interval);
+        //   $(".badge").addClass("badge-border");
+        // } else {
+        //   $(".badge").removeClass("badge-border");
+        // }
         // Getting the number of list items in the dropdown menu, and appending the amount to the text inside badge.
         var badgeCount = $("#dropdown-menu li.cart-item").length;
         $(".badge").text(badgeCount);
@@ -115,7 +119,9 @@
         }
       };
 
-      $('#dropdown-menu').perfectScrollbar();
+      $('#dropdown-menu').perfectScrollbar({
+        suppressScrollX: true
+      });
 
       $("#addToCart").click(function() {
         $("#dropdown-menu").append("<li class='cart-item'>Sample Item</li><li role='separator' class='divider'></li>");
