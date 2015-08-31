@@ -77,7 +77,7 @@
                     </div>
                     <div class="row">
                       <div class="col-sm-6">
-                        <input class="quantity" type="number" min="1">
+                        <input class="quantity" type="number" value="1">
                       </div>
                       <div class="col-sm-6">
                         <p class="total">$</p>
@@ -135,6 +135,7 @@
       $("#addToCart").click(function() {
         $("#dropdown-menu").append("<li class='cart-item'>Sample Item</li><li role='separator' class='divider'></li>");
       });
+      document.getElementsByClassName("quantity").defaultValue = "16";
       // price var is equal to the text of whatever is in the .place class
       var price = $(".price").text() * 1;
       // add the price to the element with the class of .total
