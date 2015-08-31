@@ -19,7 +19,7 @@ $(document).ready(function() {
   // Bind any changes of the input value.
   $("input.quantity1").bind("change click", function() {
     // Concatenate the string '$'' with the multiplication of the vars quantity1 and price1, and append it to the element with the class of .total. The toFixed method formats the number using fixed-point notation, in our case, two decimal places. Using jQuery helper plugin to add commas to numbers every three digits (plugins.js)
-    $(".total1").text((quantity1 * price1).toFixed(2));
+    $(".total1").text((quantity1 * price1).toFixed(2)).digits();
     quantity1 = parseInt($(this).val());
 
     $(".grand-quantity").text(quantity1 + quantity2);
@@ -28,7 +28,7 @@ $(document).ready(function() {
     /* Sub Total */
 
     var subtotal = (parseFloat(total1) + total2).toFixed(2);
-    $("#subtotal").text(subtotal);
+    $("#subtotal").text(subtotal).digits();
 
   });
 
